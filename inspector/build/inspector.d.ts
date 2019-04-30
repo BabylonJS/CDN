@@ -1,0 +1,30 @@
+import { Scene, Observable, IInspectorOptions } from "babylonjs";
+import { PropertyChangedEvent } from "./components/propertyChangedEvent";
+export declare class Inspector {
+    private static _SceneExplorerHost;
+    private static _ActionTabsHost;
+    private static _EmbedHost;
+    private static _NewCanvasContainer;
+    private static _SceneExplorerWindow;
+    private static _ActionTabsWindow;
+    private static _EmbedHostWindow;
+    private static _Scene;
+    private static _OpenedPane;
+    private static _OnBeforeRenderObserver;
+    static OnSelectionChangeObservable: Observable<string>;
+    static OnPropertyChangedObservable: Observable<PropertyChangedEvent>;
+    private static _GlobalState;
+    private static _CopyStyles;
+    private static _CreateSceneExplorer;
+    private static _CreateActionTabs;
+    private static _CreateEmbedHost;
+    private static _CreatePopup;
+    static readonly IsVisible: boolean;
+    static EarlyAttachToLoader(): void;
+    static Show(scene: Scene, userOptions: Partial<IInspectorOptions>): void;
+    private static _CreateCanvasContainer;
+    private static _DestroyCanvasContainer;
+    private static _Cleanup;
+    private static _RemoveElementFromDOM;
+    static Hide(): void;
+}

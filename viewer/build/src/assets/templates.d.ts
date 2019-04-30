@@ -1,0 +1,9 @@
+export declare const defaultTemplate: any;
+export declare const defaultViewer: any;
+export declare const error: any;
+export declare const fillContainer: any;
+export declare const help: any;
+export declare const loadingScreen: any;
+export declare const navbar: any;
+export declare const overlay: any;
+export declare const share: any;

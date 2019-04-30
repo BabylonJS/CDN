@@ -1,0 +1,9 @@
+import { extendedUpgrade } from "./extended";
+import { SceneManager } from "../../managers/sceneManager";
+/**
+ *
+ * @param name the name of the custom optimizer configuration
+ * @param upgrade set to true if you want to upgrade optimizer and false if you want to degrade
+ */
+export declare function getCustomOptimizerByName(name: string, upgrade?: boolean): typeof extendedUpgrade;
+export declare function registerCustomOptimizer(name: string, optimizer: (sceneManager: SceneManager) => boolean): void;

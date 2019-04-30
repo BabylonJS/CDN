@@ -1,0 +1,21 @@
+import { Container3D } from "./container3D";
+/**
+ * Class used to create a stack panel in 3D on XY plane
+ */
+export declare class StackPanel3D extends Container3D {
+    private _isVertical;
+    /**
+     * Gets or sets a boolean indicating if the stack panel is vertical or horizontal (horizontal by default)
+     */
+    isVertical: boolean;
+    /**
+     * Gets or sets the distance between elements
+     */
+    margin: number;
+    /**
+     * Creates new StackPanel
+     * @param isVertical
+     */
+    constructor(isVertical?: boolean);
+    protected _arrangeChildren(): void;
+}
