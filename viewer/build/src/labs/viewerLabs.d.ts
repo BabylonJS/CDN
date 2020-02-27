@@ -1,6 +1,6 @@
 import { PBREnvironment } from "./environmentSerializer";
 import { Scene } from "babylonjs/scene";
-import { Vector3 } from "babylonjs/Maths/math";
+import { Vector3 } from "babylonjs/Maths/math.vector";
 import { ShadowLight } from "babylonjs/Lights/shadowLight";
 /**
  * The ViewerLabs class will hold functions that are not (!) backwards compatible.

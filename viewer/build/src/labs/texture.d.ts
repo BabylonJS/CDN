@@ -127,11 +127,11 @@ export declare class TextureCube {
     /**
      * Returns the width of a face of the texture or 0 if not available
      */
-    readonly Width: number;
+    get Width(): number;
     /**
      * Returns the height of a face of the texture or 0 if not available
      */
-    readonly Height: number;
+    get Height(): number;
     /**
      * constructor
      * @param internalFormat WebGL pixel format for the texture on the GPU

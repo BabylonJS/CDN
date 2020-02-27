@@ -23,7 +23,7 @@ export declare class TelemetryManager {
      * @param event The name of the Telemetry event
      * @param details An additional value, or an object containing a list of property/value pairs
      */
-    readonly broadcast: (event: string, viewerId?: string | undefined, details?: any) => void;
+    get broadcast(): (event: string, viewerId?: string | undefined, details?: any) => void;
     /**
      * Log a Telemetry event for errors raised on the WebGL context.
      * @param engine The Babylon engine with the WebGL context.
@@ -33,7 +33,7 @@ export declare class TelemetryManager {
      * Enable or disable telemetry events
      * @param enabled Boolan, true if events are enabled
      */
-    enable: boolean;
+    set enable(enabled: boolean);
     /**
      * Called on event when disabled, typically do nothing here
      */
@@ -48,7 +48,7 @@ export declare class TelemetryManager {
      * Returns the current session ID or creates one if it doesn't exixt
      * @return The current session ID
      */
-    readonly session: string;
+    get session(): string;
     /**
      * Disposes the telemetry manager
      */

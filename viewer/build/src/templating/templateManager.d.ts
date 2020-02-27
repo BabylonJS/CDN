@@ -147,7 +147,7 @@ export declare class Template {
     /**
      * Get the template'S configuration
      */
-    readonly configuration: ITemplateConfiguration;
+    get configuration(): ITemplateConfiguration;
     /**
      * A template can be a parent element for other templates or HTML elements.
      * This function will deliver all child HTML elements of this template.

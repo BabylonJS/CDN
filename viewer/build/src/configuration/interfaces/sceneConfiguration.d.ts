@@ -9,7 +9,7 @@ export interface ISceneConfiguration {
         b: number;
         a: number;
     };
-    /** Deprecated, use environmentMap.mainColor instead. */
+    /** @deprecated Please use environmentMap.mainColor instead. */
     mainColor?: {
         r?: number;
         g?: number;
@@ -19,9 +19,7 @@ export interface ISceneConfiguration {
     environmentTexture?: string;
     colorGrading?: IColorGradingConfiguration;
     environmentRotationY?: number;
-    /**
-     * Deprecated, please use default rendering pipeline
-     */
+    /** @deprecated Please use default rendering pipeline. */
     glow?: boolean | IGlowLayerOptions;
     disableHdr?: boolean;
     renderInBackground?: boolean;

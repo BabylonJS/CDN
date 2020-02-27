@@ -10,9 +10,9 @@ export interface ISkyboxConfiguration {
         g: number;
         b: number;
     };
-    pbr?: boolean;
+    /** @deprecated */ pbr?: boolean;
     scale?: number;
-    blur?: number;
+    /** @deprecated */ blur?: number;
     material?: {
         imageProcessingConfiguration?: IImageProcessingConfiguration;
         [propName: string]: any;

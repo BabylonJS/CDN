@@ -43,56 +43,56 @@ export declare abstract class AbstractViewer {
     /**
      * Will notify when the scene was initialized
      */
-    readonly onSceneInitObservable: Observable<Scene>;
+    get onSceneInitObservable(): Observable<Scene>;
     /**
      * will notify when the engine was initialized
      */
-    readonly onEngineInitObservable: Observable<Engine>;
+    get onEngineInitObservable(): Observable<Engine>;
     /**
      * Will notify when a new model was added to the scene.
      * Note that added does not neccessarily mean loaded!
      */
-    readonly onModelAddedObservable: Observable<ViewerModel>;
+    get onModelAddedObservable(): Observable<ViewerModel>;
     /**
      * will notify after every model load
      */
-    readonly onModelLoadedObservable: Observable<ViewerModel>;
+    get onModelLoadedObservable(): Observable<ViewerModel>;
     /**
      * will notify when any model notify of progress
      */
-    readonly onModelLoadProgressObservable: Observable<SceneLoaderProgressEvent>;
+    get onModelLoadProgressObservable(): Observable<SceneLoaderProgressEvent>;
     /**
      * will notify when any model load failed.
      */
-    readonly onModelLoadErrorObservable: Observable<{
+    get onModelLoadErrorObservable(): Observable<{
         message: string;
         exception: any;
     }>;
     /**
      * Will notify when a model was removed from the scene;
      */
-    readonly onModelRemovedObservable: Observable<ViewerModel>;
+    get onModelRemovedObservable(): Observable<ViewerModel>;
     /**
      * will notify when a new loader was initialized.
      * Used mainly to know when a model starts loading.
      */
-    readonly onLoaderInitObservable: Observable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
+    get onLoaderInitObservable(): Observable<ISceneLoaderPlugin | ISceneLoaderPluginAsync>;
     /**
      * Observers registered here will be executed when the entire load process has finished.
      */
-    readonly onInitDoneObservable: Observable<AbstractViewer>;
+    get onInitDoneObservable(): Observable<AbstractViewer>;
     /**
      * Functions added to this observable will be executed on each frame rendered.
      */
-    readonly onFrameRenderedObservable: Observable<AbstractViewer>;
+    get onFrameRenderedObservable(): Observable<AbstractViewer>;
     /**
      * Observers registered here will be executed when VR more is entered.
      */
-    readonly onEnteringVRObservable: Observable<AbstractViewer>;
+    get onEnteringVRObservable(): Observable<AbstractViewer>;
     /**
      * Observers registered here will be executed when VR mode is exited.
      */
-    readonly onExitingVRObservable: Observable<AbstractViewer>;
+    get onExitingVRObservable(): Observable<AbstractViewer>;
     observablesManager: ObservablesManager;
     /**
      * The canvas associated with this viewer
@@ -101,7 +101,7 @@ export declare abstract class AbstractViewer {
     /**
      * The (single) canvas of this viewer
      */
-    readonly canvas: HTMLCanvasElement;
+    get canvas(): HTMLCanvasElement;
     /**
      * is this viewer disposed?
      */
@@ -120,7 +120,7 @@ export declare abstract class AbstractViewer {
      */
     protected _isInit: boolean;
     protected _configurationContainer: ConfigurationContainer;
-    readonly configurationContainer: ConfigurationContainer;
+    get configurationContainer(): ConfigurationContainer;
     protected getConfigurationLoader(): RenderOnlyConfigurationLoader;
     constructor(containerElement: Element, initialConfiguration?: ViewerConfiguration);
     /**
@@ -134,16 +134,17 @@ export declare abstract class AbstractViewer {
     /**
      * Is the engine currently set to rende even when the page is in background
      */
+    get renderInBackground(): boolean;
     /**
-    * Set the viewer's background rendering flag.
-    */
-    renderInBackground: boolean;
+     * Set the viewer's background rendering flag.
+     */
+    set renderInBackground(value: boolean);
     /**
      * Get the configuration object. This is a reference only.
      * The configuration can ONLY be updated using the updateConfiguration function.
      * changing this object will have no direct effect on the scene.
      */
-    readonly configuration: ViewerConfiguration;
+    get configuration(): ViewerConfiguration;
     /**
      * force resizing the engine.
      */

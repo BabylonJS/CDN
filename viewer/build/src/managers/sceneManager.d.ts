@@ -109,45 +109,50 @@ export declare class SceneManager {
     labs: ViewerLabs;
     private _defaultRenderingPipeline;
     private _assetsRootURL;
-    readonly defaultRenderingPipeline: Nullable<DefaultRenderingPipeline>;
+    get defaultRenderingPipeline(): Nullable<DefaultRenderingPipeline>;
     protected _vrHelper?: VRExperienceHelper;
-    readonly vrHelper: VRExperienceHelper | undefined;
+    get vrHelper(): VRExperienceHelper | undefined;
     constructor(_engine: Engine, _configurationContainer: ConfigurationContainer, _observablesManager?: ObservablesManager | undefined);
     /**
      * Returns a boolean representing HDR support
      */
-    readonly isHdrSupported: boolean;
+    get isHdrSupported(): boolean;
     /**
      * Return the main color defined in the configuration.
      */
-    readonly mainColor: Color3;
-    readonly reflectionColor: Color3;
-    animationBlendingEnabled: boolean;
-    readonly observablesManager: ObservablesManager | undefined;
+    get mainColor(): Color3;
+    get reflectionColor(): Color3;
+    get animationBlendingEnabled(): boolean;
+    set animationBlendingEnabled(value: boolean);
+    get observablesManager(): ObservablesManager | undefined;
     private _processShadows;
     /**
      * The flag defining whether shadows are rendered constantly or once.
      */
+    get processShadows(): boolean;
     /**
-    * Should shadows be rendered every frame, or only once and stop.
-    * This can be used to optimize a scene.
-    *
-    * Not that the shadows will NOT disapear but will remain in place.
-    * @param process if true shadows will be updated once every frame. if false they will stop being updated.
-    */
-    processShadows: boolean;
+     * Should shadows be rendered every frame, or only once and stop.
+     * This can be used to optimize a scene.
+     *
+     * Not that the shadows will NOT disapear but will remain in place.
+     * @param process if true shadows will be updated once every frame. if false they will stop being updated.
+     */
+    set processShadows(process: boolean);
     private _groundEnabled;
-    groundEnabled: boolean;
+    get groundEnabled(): boolean;
+    set groundEnabled(newValue: boolean);
     private _groundMirrorEnabled;
     /**
      * gets wether the reflection is disabled.
      */
+    get groundMirrorEnabled(): boolean;
     /**
-    * sets wether the reflection is disabled.
-    */
-    groundMirrorEnabled: boolean;
+     * sets wether the reflection is disabled.
+     */
+    set groundMirrorEnabled(value: boolean);
     private _defaultRenderingPipelineEnabled;
-    defaultRenderingPipelineEnabled: boolean;
+    get defaultRenderingPipelineEnabled(): boolean;
+    set defaultRenderingPipelineEnabled(value: boolean);
     /**
      * Sets the engine flags to unlock all babylon features.
      * Can also be configured using the scene.flags configuration object
@@ -168,9 +173,11 @@ export declare class SceneManager {
     private _defaultRenderingPipelineShouldBuild;
     private _rebuildPostprocesses;
     private _bloomEnabled;
-    bloomEnabled: boolean;
+    get bloomEnabled(): boolean;
+    set bloomEnabled(value: boolean);
     private _fxaaEnabled;
-    fxaaEnabled: boolean;
+    get fxaaEnabled(): boolean;
+    set fxaaEnabled(value: boolean);
     setDefaultMaterial(sceneConfig: ISceneConfiguration): void;
     /**
      * internally configure the scene using the provided configuration.

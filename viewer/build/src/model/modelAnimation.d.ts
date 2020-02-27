@@ -1,16 +1,16 @@
-import { Vector3 } from "babylonjs/Maths/math";
+import { Vector3 } from "babylonjs/Maths/math.vector";
 import { AnimationGroup } from "babylonjs/Animations/index";
 /**
  * Animation play mode enum - is the animation looping or playing once
  */
-export declare const enum AnimationPlayMode {
+export declare enum AnimationPlayMode {
     ONCE = 0,
     LOOP = 1
 }
 /**
  * An enum representing the current state of an animation object
  */
-export declare const enum AnimationState {
+export declare enum AnimationState {
     INIT = 0,
     PLAYING = 1,
     PAUSED = 2,
@@ -20,7 +20,7 @@ export declare const enum AnimationState {
 /**
  * The different type of easing functions available
  */
-export declare const enum EasingFunction {
+export declare enum EasingFunction {
     Linear = 0,
     CircleEase = 1,
     BackEase = 2,
@@ -142,44 +142,46 @@ export declare class GroupModelAnimation implements IModelAnimation {
     /**
      * Get the animation's name
      */
-    readonly name: string;
+    get name(): string;
     /**
      * Get the current animation's state
      */
-    readonly state: AnimationState;
+    get state(): AnimationState;
     /**
      * Gets the speed ratio to use for all animations
      */
+    get speedRatio(): number;
     /**
-    * Sets the speed ratio to use for all animations
-    */
-    speedRatio: number;
+     * Sets the speed ratio to use for all animations
+     */
+    set speedRatio(value: number);
     /**
      * Get the max numbers of frame available in the animation group
      *
      * In correlation to an arry, this would be ".length"
      */
-    readonly frames: number;
+    get frames(): number;
     /**
      * Get the current frame playing right now.
      * This can be used to poll the frame currently playing (and, for exmaple, display a progress bar with the data)
      *
      * In correlation to an array, this would be the current index
      */
-    readonly currentFrame: number;
+    get currentFrame(): number;
     /**
      * Get the FPS value of this animation
      */
-    readonly fps: number;
+    get fps(): number;
     /**
      * What is the animation'S play mode (looping or played once)
      */
+    get playMode(): AnimationPlayMode;
     /**
-    * Set the play mode.
-    * If the animation is played, it will continue playing at least once more, depending on the new play mode set.
-    * If the animation is not set, the will be initialized and will wait for the user to start playing it.
-    */
-    playMode: AnimationPlayMode;
+     * Set the play mode.
+     * If the animation is played, it will continue playing at least once more, depending on the new play mode set.
+     * If the animation is not set, the will be initialized and will wait for the user to start playing it.
+     */
+    set playMode(value: AnimationPlayMode);
     /**
      * Reset the animation group
      */

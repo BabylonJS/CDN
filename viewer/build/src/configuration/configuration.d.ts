@@ -1,6 +1,6 @@
-import { EngineOptions } from 'babylonjs/Engines/engine';
 import { ICameraConfiguration, IDefaultRenderingPipelineConfiguration, IGroundConfiguration, ILightConfiguration, IModelConfiguration, IObserversConfiguration, ISceneConfiguration, ISceneOptimizerConfiguration, ISkyboxConfiguration, ITemplateConfiguration, IVRConfiguration } from './interfaces';
 import { IEnvironmentMapConfiguration } from './interfaces/environmentMapConfiguration';
+import { EngineOptions } from 'babylonjs/Engines/thinEngine';
 export declare function getConfigurationKey(key: string, configObject: any): any;
 export interface ViewerConfiguration {
     version?: string;
@@ -68,14 +68,14 @@ export interface ViewerConfiguration {
             };
         };
         hideLoadingDelay?: number;
-        /** Deprecated */
+        /** @deprecated */
         assetsRootURL?: string;
         environmentMainColor?: {
             r: number;
             g: number;
             b: number;
         };
-        /** Deprecated */
+        /** @deprecated */
         environmentMap?: {
             /**
              * Environment map texture path in relative to the asset folder.

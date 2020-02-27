@@ -17,7 +17,7 @@ export declare class ModelLoader {
     private _loaders;
     private _plugins;
     private _baseUrl;
-    readonly baseUrl: string;
+    get baseUrl(): string;
     /**
      * Create a new Model loader
      * @param _viewer the viewer using this model loader

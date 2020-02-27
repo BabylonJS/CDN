@@ -104,16 +104,18 @@ export declare class ViewerModel implements IDisposable {
     private _frameRate;
     private _shadowsRenderedAfterLoad;
     constructor(_observablesManager: ObservablesManager, modelConfiguration: IModelConfiguration, _configurationContainer?: ConfigurationContainer | undefined);
-    shadowsRenderedAfterLoad: boolean;
+    get shadowsRenderedAfterLoad(): boolean;
+    set shadowsRenderedAfterLoad(rendered: boolean);
     getViewerId(): string | undefined;
     /**
      * Is this model enabled?
      */
+    get enabled(): boolean;
     /**
-    * Set whether this model is enabled or not.
-    */
-    enabled: boolean;
-    loaderDone: boolean;
+     * Set whether this model is enabled or not.
+     */
+    set enabled(enable: boolean);
+    set loaderDone(done: boolean);
     private _checkCompleteState;
     /**
      * Add a mesh to this model.
@@ -126,15 +128,16 @@ export declare class ViewerModel implements IDisposable {
     /**
      * get the list of meshes (excluding the root mesh)
      */
-    readonly meshes: AbstractMesh[];
+    get meshes(): AbstractMesh[];
     /**
      * Get the model's configuration
      */
+    get configuration(): IModelConfiguration;
     /**
-    * (Re-)set the model's entire configuration
-    * @param newConfiguration the new configuration to replace the new one
-    */
-    configuration: IModelConfiguration;
+     * (Re-)set the model's entire configuration
+     * @param newConfiguration the new configuration to replace the new one
+     */
+    set configuration(newConfiguration: IModelConfiguration);
     /**
      * Update the current configuration with new values.
      * Configuration will not be overwritten, but merged with the new configuration.
