@@ -79,7 +79,7 @@ export declare class SceneManager {
     /**
      * Babylon's scene optimizer
      */
-    sceneOptimizer: SceneOptimizer;
+    sceneOptimizer?: SceneOptimizer;
     /**
      * Models displayed in this viewer.
      */

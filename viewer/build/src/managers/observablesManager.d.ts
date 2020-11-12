@@ -1,7 +1,7 @@
 import { Observable } from 'babylonjs/Misc/observable';
 import { Scene } from 'babylonjs/scene';
 import { Engine } from 'babylonjs/Engines/engine';
-import { SceneLoaderProgressEvent, ISceneLoaderPlugin, ISceneLoaderPluginAsync } from 'babylonjs/Loading/sceneLoader';
+import { ISceneLoaderProgressEvent, ISceneLoaderPlugin, ISceneLoaderPluginAsync } from 'babylonjs/Loading/sceneLoader';
 import { ViewerModel } from '../model/viewerModel';
 export declare class ObservablesManager {
     /**
@@ -24,7 +24,7 @@ export declare class ObservablesManager {
     /**
      * will notify when any model notify of progress
      */
-    onModelLoadProgressObservable: Observable<SceneLoaderProgressEvent>;
+    onModelLoadProgressObservable: Observable<ISceneLoaderProgressEvent>;
     /**
      * will notify when any model load failed.
      */

@@ -4,7 +4,7 @@ import { AbstractMesh } from "babylonjs/Meshes/abstractMesh";
 import { IParticleSystem } from "babylonjs/Particles/IParticleSystem";
 import { Skeleton } from "babylonjs/Bones/skeleton";
 import { Observable } from "babylonjs/Misc/observable";
-import { SceneLoaderProgressEvent } from "babylonjs/Loading/sceneLoader";
+import { ISceneLoaderProgressEvent } from "babylonjs/Loading/sceneLoader";
 import { AnimationGroup } from "babylonjs/Animations/animationGroup";
 import { Animation } from "babylonjs/Animations/index";
 import { Nullable } from "babylonjs/types";
@@ -68,7 +68,7 @@ export declare class ViewerModel implements IDisposable {
     /**
      * Observers registered here will be executed when the loader notified of a progress event
      */
-    onLoadProgressObservable: Observable<SceneLoaderProgressEvent>;
+    onLoadProgressObservable: Observable<ISceneLoaderProgressEvent>;
     /**
      * Observers registered here will be executed when the loader notified of an error.
      */
